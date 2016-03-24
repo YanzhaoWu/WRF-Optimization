@@ -1,0 +1,1 @@
+nproc_x and nproc_y variables to the domains section of namelist.input and set these to the number of processors in X and Y,keeping in mind that the product of these two variables must equal the number of MPI tasks specified with mpirun minus the number of I/O processes (if any).

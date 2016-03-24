@@ -1,0 +1,15 @@
+The namelist.input file also provides control over the number and shape
+   of the tiling WRF uses within each patch. On most systems, the default
+   tiling will be only over the Y dimension; the X dimension is left
+   undecomposed over tiles. This default behavior is defined in
+   frame/module_machine.F in the routine init_module_machine. The default
+   number of tiles per patch is 1 if the code is not compiled for OpenMP
+   or the value of the OpenMP function omp_get_max_threads(). This default
+   is defined in frame/module_tiles.F in the routine set_tiles2. The
+   default number of tiles may be overridden by setting the variable
+   numtiles to a value greater than 1 in the domains section of the
+   namelist.input file. Or the default shape of a tile can be specified by
+   setting tile_sz_x and tile_sz_y in the domains section of the
+   namelist.input file. These will override both the default tiling and
+   numtiles if it is set.
+
